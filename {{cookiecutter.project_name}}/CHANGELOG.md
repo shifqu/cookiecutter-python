@@ -16,5 +16,5 @@ OR
 
 Changelog
 =========
-## 1.0.0 - TBD
+## {{cookiecutter.project_version}} - TBD
 - Initial API stable release.
