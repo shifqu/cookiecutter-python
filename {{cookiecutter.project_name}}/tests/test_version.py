@@ -12,9 +12,7 @@ official_semver_re = re.compile(
 
 def test_version() -> None:
     """Ensure the version is a string that matches semver format."""
-    assert isinstance(
-        __version__, str
-    ), f"__version__ must be a str, not '{type(__version__)}'"
+    assert isinstance(__version__, str), f"__version__ must be a str, not '{type(__version__)}'"
     assert official_semver_re.match(
         __version__
     ), f"'{__version__}' is not in simple semver.org format"
