@@ -25,6 +25,7 @@ pytest = "^6.2.2"
 pytest-cov = "^2.11.1"
 pytest-mock = "^3.5.1"
 safety = "^1.10.3"
+shellcheck-py = "^0.7.1"
 vulture = "^2.3"
 
 [build-system]
