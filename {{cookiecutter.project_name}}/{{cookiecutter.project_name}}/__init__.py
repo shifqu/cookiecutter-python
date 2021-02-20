@@ -2,4 +2,6 @@
 
 {{cookiecutter.project_description}}
 """
-__version__ = "{{cookiecutter.project_version}}"
+from importlib.metadata import version as metadata_version
+
+__version__ = str(metadata_version(__name__))
