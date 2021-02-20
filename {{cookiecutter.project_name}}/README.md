@@ -1,11 +1,9 @@
 {{cookiecutter.project_name}}
 _________________
 
-{%- if cookiecutter.is_open_source == "y" -%}
-[![PyPI version](https://badge.fury.io/py/{{cookiecutter.project_name}}.svg)](http://badge.fury.io/py/{{cookiecutter.project_name}})
+{%- if cookiecutter.is_open_source == "y" -%}[![PyPI version](https://badge.fury.io/py/{{cookiecutter.project_name}}.svg)](http://badge.fury.io/py/{{cookiecutter.project_name}})
 [![Join the chat at https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}](https://badges.gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}.svg)](https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Downloads](https://pepy.tech/badge/{{cookiecutter.project_name}})](https://pepy.tech/project/{{cookiecutter.project_name}})
-{% endif %}
+[![Downloads](https://pepy.tech/badge/{{cookiecutter.project_name}})](https://pepy.tech/project/{{cookiecutter.project_name}}){% endif %}
 [![Test Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Test/badge.svg?branch=develop)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ATest)
 [![Lint Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/workflows/Lint/badge.svg?branch=develop)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/actions?query=workflow%3ALint)
 [![codecov](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_name}})
