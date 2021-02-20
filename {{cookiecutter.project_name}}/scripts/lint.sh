@@ -9,5 +9,5 @@ poetry run flake8 {{cookiecutter.project_name}}/ tests/
 poetry run safety check -i 39462
 poetry run bandit -r {{cookiecutter.project_name}}/
 poetry run pydocstyle {{cookiecutter.project_name}}/ tests/
-poetry run proselint "$(find . -type f \( -name "*md" -o -name "*txt" \) -o -path "./tests" -prune -false)"
+poetry run find . -not -path '*/\.*' -not -path '*/__*' -not -path '*/tests/*' -type f \( -iname "*md" -o -iname "*txt" \) | xargs proselint
 poetry run find scripts/ -type f -not -name '*py' | xargs shellcheck
