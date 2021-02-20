@@ -5,5 +5,7 @@
   "github_username": "shifqu",
   "project_name": "python_project_name",
   "project_description": "Project short description.",
-  "project_version": "0.0.1"
+  "project_version": "0.0.1",
+  "is_open_source": "y",
+  "include_contributing_docs": "y"
 }
