@@ -4,6 +4,7 @@ import shutil
 
 
 def remove(filepath):
+    print("Requested to remove", filepath)
     if os.path.isfile(filepath):
         os.remove(filepath)
     elif os.path.isdir(filepath):
