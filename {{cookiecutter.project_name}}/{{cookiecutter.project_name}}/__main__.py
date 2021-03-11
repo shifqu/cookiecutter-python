@@ -1,4 +1,4 @@
-"""This is the file run when this project is run as a module.
+"""The main file that is executed when this project is run as a module.
 
 Examples
 --------

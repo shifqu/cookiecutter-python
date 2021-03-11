@@ -4,6 +4,13 @@ import shutil
 
 
 def remove(filepath):
+    """Remove filepath.
+
+    Parameters
+    ----------
+    filepath
+        A path to either a file or a directory that should be removed.
+    """
     print("Requested to remove", filepath)
     if os.path.isfile(filepath):
         os.remove(filepath)
