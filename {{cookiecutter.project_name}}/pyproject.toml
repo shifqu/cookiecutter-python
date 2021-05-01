@@ -11,21 +11,21 @@ python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7"
-black = {version = "^20.8-beta.1", allow-prereleases = true}
-cruft = "^2.6.1"
-flake8-bugbear = "^20.11.1"
-ipython = "^7.20"
-isort = "^5.7"
+black = {version = "^21.4-beta.2", allow-prereleases = true}
+cruft = "^2.8.0"
+flake8-bugbear = "^21.4.3"
+ipython = "^7.23"
+isort = "^5.8"
 mypy = "^0.812"
 pep8-naming = "^0.11.1"
-portray = "^1.5.2"
+portray = "^1.6.0"
 proselint = "^0.10.2"
-pydocstyle = "^5.1.1"
-pytest = "^6.2.2"
+pydocstyle = "^6.0.0"
+pytest = "^6.2.3"
 pytest-cov = "^2.11.1"
-pytest-mock = "^3.5.1"
+pytest-mock = "^3.6.0"
 safety = "^1.10.3"
-shellcheck-py = "^0.7.1"
+shellcheck-py = "^0.7.2"
 vulture = "^2.3"
 
 [build-system]
