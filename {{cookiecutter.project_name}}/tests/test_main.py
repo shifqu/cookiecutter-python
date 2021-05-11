@@ -3,14 +3,14 @@ import subprocess
 
 import pytest
 
-from {{cookiecutter.project_name}} import __version__
+from {{cookiecutter.package_slug}} import __version__
 
 
 @pytest.mark.parametrize(
     ("cmd", "expected_output"),
     [
-        ("python -m {{cookiecutter.project_name}} --version", __version__),
-        ("python -m {{cookiecutter.project_name}}.main --version", __version__),
+        ("python -m {{cookiecutter.package_slug}} --version", __version__),
+        ("python -m {{cookiecutter.package_slug}}.main --version", __version__),
     ],
 )
 def test_main(cmd, expected_output):
