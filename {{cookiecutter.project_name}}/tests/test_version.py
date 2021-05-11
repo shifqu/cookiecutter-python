@@ -1,7 +1,7 @@
 """Tests for the version string."""
 import re
 
-from {{cookiecutter.project_name}} import __version__
+from {{cookiecutter.package_slug}} import __version__
 
 official_semver_re = re.compile(
     r"^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>"
