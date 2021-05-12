@@ -8,7 +8,7 @@ if poetry install; then
     else
         echo 'fatal: coulld not upgrade pip'
     fi
-    if poetry run pre-commit install -t pre-commit -t pre-push; then
+    if poetry run pre-commit install -t pre-commit -t pre-push -t commit-msg; then
         echo 'successfully installed pre-commit hooks'
         echo 'use "poetry shell" to activate the new virtual environment'
         echo 'more info: https://python-poetry.org/docs/basic-usage/#activating-the-virtual-environment'
