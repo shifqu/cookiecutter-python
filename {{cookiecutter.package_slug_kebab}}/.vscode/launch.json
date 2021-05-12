@@ -12,7 +12,7 @@
       "name": "Python: Module",
       "type": "python",
       "request": "launch",
-      "module": "{{cookiecutter.project_slug}}",
+      "module": "{{cookiecutter.package_slug}}",
       "args": [
         "--version"
       ]
