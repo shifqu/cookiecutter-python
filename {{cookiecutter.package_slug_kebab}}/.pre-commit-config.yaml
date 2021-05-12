@@ -37,4 +37,9 @@ repos:
         pass_filenames: false
         require_serial: true
         stages: [push]
+      - id: commitizen
+        name: commitizen check commit message
+        entry: cz check --commit-msg-file
+        language: system
+        stages: [commit-msg]
 default_stages: [commit, push]

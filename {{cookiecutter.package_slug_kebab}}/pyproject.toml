@@ -12,6 +12,7 @@ python = "^3.8.10"
 [tool.poetry.dev-dependencies]
 bandit = "^1.7"
 black = {version = "^21.4-beta.2", allow-prereleases = true}
+commitizen = "^2.17.6"
 cruft = "^2.8.0"
 flake8-bugbear = "^21.4.3"
 ipython = "^7.23"
@@ -38,3 +39,15 @@ line-length = 100
 
 [tool.isort]
 profile = "black"
+
+[tool.commitizen]
+annotated_tag = true
+bump_message = "bump: $current_version → $new_version [skip-ci]"
+name = "cz_conventional_commits"
+tag_format = "v$version"
+update_changelog_on_bump = true
+version = "{{cookiecutter.project_version}}"
+version_files = [
+    "pyproject.toml:version",
+    "{{cookiecutter.package_slug}}/__init__.py"
+]
