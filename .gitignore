@@ -59,6 +59,7 @@ atlassian-ide-plugin.xml
 *.swp
 *.kate-swp
 .ropeproject/
+.vscode/
 
 # Python3 Venv Files
 .venv/
@@ -77,12 +78,8 @@ venv/
 # Emacs backup
 *~
 
-# VSCode
-/.vscode
-
 # Automatically generated files
 docs/preconvert
 site/
 out
 poetry.lock
-

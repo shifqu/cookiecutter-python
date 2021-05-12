@@ -77,12 +77,8 @@ venv/
 # Emacs backup
 *~
 
-# VSCode
-/.vscode
-
 # Automatically generated files
 docs/preconvert
 site/
 out
 poetry.lock
-
