@@ -6,7 +6,7 @@ from {{cookiecutter.package_slug}} import __version__
 
 def main() -> None:
     """Execute the main function for when the project is run."""
-    parser = ArgumentParser()
+    parser = ArgumentParser('{{cookiecutter.package_slug}}')
     parser.add_argument("--version", action="version", version=__version__)
     parser.parse_args()
 
