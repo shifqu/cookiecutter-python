@@ -4,7 +4,7 @@ Examples
 --------
 python -m module_name --version
 """
-from .main import main
+from {{cookiecutter.package_slug}}.main import main
 
 if __name__ == "__main__":
     main()

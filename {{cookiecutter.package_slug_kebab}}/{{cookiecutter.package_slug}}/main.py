@@ -1,7 +1,7 @@
 """The main file for when the project is run."""
 from argparse import ArgumentParser
 
-from . import __version__
+from {{cookiecutter.package_slug}} import __version__
 
 
 def main() -> None:
