@@ -1,13 +1,13 @@
 {
-  "full_name": "Sonny Valkeneers",
-  "email": "sonny@softllama.net",
-  "organization": "Softllama",
-  "github_username": "shifqu",
   "project_name": "Python Project Name",
   "package_slug": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
   "package_slug_kebab": "{{cookiecutter.package_slug.replace('_', '-')}}",
   "project_description": "Project short description.",
   "project_version": "0.0.1",
   "is_open_source": "y",
-  "include_contributing_docs": "y"
+  "include_contributing_docs": "y",
+  "full_name": "Sonny Valkeneers",
+  "email": "sonny@softllama.net",
+  "organization": "Softllama",
+  "github_username": "shifqu"
 }
