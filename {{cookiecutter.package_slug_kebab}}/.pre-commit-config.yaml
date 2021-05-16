@@ -29,9 +29,9 @@ repos:
         args: [--markdown-linebreak-ext=md]
 -   repo: local
     hooks:
-      - id: run-done-script
-        name: Run ./scripts/done
-        entry: ./scripts/done.sh
+      - id: run-test-script
+        name: Run ./scripts/test
+        entry: ./scripts/test.sh
         language: system
         always_run: true
         pass_filenames: false
