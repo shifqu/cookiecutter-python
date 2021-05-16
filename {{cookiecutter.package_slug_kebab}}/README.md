@@ -26,6 +26,8 @@
 
 `poetry run pip install --upgrade pip`
 
+`poetry update`
+
 `poetry run pre-commit install -t pre-commit -t pre-push`
 
 ##### Tip: This repository ships with an install script (./scripts/install.sh) which will run above commands for you
