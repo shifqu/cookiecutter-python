@@ -7,3 +7,6 @@ To use:
 ```
 cruft create https://github.com/shifqu/cookiecutter-python/
 ```
+
+###### Note
+###### This is a personalized clone from [cruft's creator's template](http://github.com/timothycrosley/cookiecutter-python)
