@@ -15,7 +15,7 @@ jobs:
           key:
             {{ "${{ runner.os }}-${{ hashFiles('**/pyproject.toml', '**/setup.cfg') }}" }}
           restore-keys: |
-            {{ "${{ runner.os }}-}" }}
+            {{ "${{ runner.os }}-" }}
 
       - uses: actions/setup-python@v2
         with:
