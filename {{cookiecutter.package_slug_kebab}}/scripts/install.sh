@@ -5,6 +5,11 @@ if poetry install; then
     echo 'successfully installed poetry env'
     if poetry run pip install --upgrade pip; then
         echo 'successfully updated pip'
+        if poetry update; then
+            echo 'successfully updated dependencies'
+        else
+            echo 'fatal: could not update dependencies'
+        fi
     else
         echo 'fatal: coulld not upgrade pip'
     fi
