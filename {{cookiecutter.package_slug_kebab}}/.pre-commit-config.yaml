@@ -43,4 +43,4 @@ repos:
         language: system
         stages: [commit-msg]
 default_stages: [commit, push]
-exclude: (^\.cruft\.json$|^\.vscode/*)
+exclude: (^\.cruft\.json$|^\.vscode\/.*)
