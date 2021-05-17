@@ -2,8 +2,8 @@
 set -euxo pipefail
 
 poetry run cruft check
-poetry run find . -not -path '*/\.*' -not -path '*/__*' -not -path '*/tests/*' -type f \( -iname "*md" -o -iname "*txt" \) | xargs proselint
-poetry run find scripts/ -type f -not -name '*py' | xargs shellcheck
+find . -not -path '*/\.*' -not -path '*/__*' -not -path '*/tests/*' -type f \( -iname "*md" -o -iname "*txt" \) | poetry run xargs proselint
+find scripts/ -type f -not -name '*py' | poetry run xargs shellcheck
 poetry run isort --check --diff {{cookiecutter.package_slug}}/ tests/
 poetry run black --check {{cookiecutter.package_slug}}/ tests/
 poetry run pydocstyle {{cookiecutter.package_slug}}/ tests/
