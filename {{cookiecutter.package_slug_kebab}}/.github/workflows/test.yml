@@ -37,5 +37,5 @@ jobs:
           poetry run coverage xml
 
       - name: Report Coverage
-        uses: codecov/codecov-action@v1.0.6
+        uses: codecov/codecov-action@v1.5.0
 {% endif %}
