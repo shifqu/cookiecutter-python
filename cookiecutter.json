@@ -6,6 +6,7 @@
   "project_version": "0.0.1",
   "is_open_source": "y",
   "include_contributing_docs": "y",
+  "ignore_poetry_lock_file": "y",
   "full_name": "Sonny Valkeneers",
   "email": "sonny@softllama.net",
   "organization": "Softllama",

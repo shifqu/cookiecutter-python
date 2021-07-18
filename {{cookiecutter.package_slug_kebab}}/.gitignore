@@ -81,4 +81,6 @@ venv/
 docs/preconvert
 site/
 out
+{%- if cookiecutter.ignore_poetry_lock_file == "y" %}
 poetry.lock
+{% endif %}
