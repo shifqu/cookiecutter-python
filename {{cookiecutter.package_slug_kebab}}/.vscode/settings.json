@@ -10,6 +10,9 @@
     "--line-length",
     "100"
   ],
+  "python.linting.pydocstyleArgs": [
+    "--match='(?!test_).*\\.py'"
+  ],
   "python.linting.pylintEnabled": false,
   "python.linting.pydocstyleEnabled": true,
   "python.linting.mypyEnabled": true,
@@ -26,7 +29,11 @@
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
-    }
-  },
-  "autoDocstring.docstringFormat": "numpy",
+    },
+    "editor.snippetSuggestions": "bottom",
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.filterGraceful": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.suggestSelection": "recentlyUsed"
+  }
 }
