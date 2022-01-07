@@ -1,9 +1,9 @@
 """Remove directories and files that should not be included for this specific project."""
-import os
+from pathlib import Path
 import shutil
 
 
-def remove(filepath):
+def remove(filepath: Path):
     """Remove filepath.
 
     Parameters
@@ -12,9 +12,9 @@ def remove(filepath):
         A path to either a file or a directory that should be removed.
     """
     print("Requested to remove", filepath)
-    if os.path.isfile(filepath):
-        os.remove(filepath)
-    elif os.path.isdir(filepath):
+    if filepath.is_file():
+        filepath.unlink()
+    elif filepath.is_dir():
         shutil.rmtree(filepath)
 
 
@@ -22,4 +22,4 @@ include_contributing_docs = "{{cookiecutter.include_contributing_docs}}" == "y"
 
 if not include_contributing_docs:
     # remove top-level file inside the generated folder
-    remove(os.path.join(os.getcwd(), "docs", "contributing"))
+    remove(Path.cwd().joinpath("docs", "contributing"))
