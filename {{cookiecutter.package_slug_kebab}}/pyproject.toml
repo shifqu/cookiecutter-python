@@ -53,3 +53,13 @@ version_files = [
     "pyproject.toml:version",
     "{{cookiecutter.package_slug}}/__init__.py"
 ]
+
+[tool.pydocstyle]
+convention = "numpy"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]
+omit = ["*tests*"]
