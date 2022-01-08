@@ -1,7 +1,7 @@
 """Tests for the version string."""
 import re
 
-from {{cookiecutter.package_slug}} import __version__
+from {{cookiecutter.package_slug}} import version
 
 official_semver_re = re.compile(
     r"^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>"
@@ -12,7 +12,7 @@ official_semver_re = re.compile(
 
 def test_version() -> None:
     """Ensure the version is a string that matches semver format."""
-    assert isinstance(__version__, str), f"__version__ must be a str, not '{type(__version__)}'."
+    assert isinstance(version, str), f"version must be a str, not '{type(version)}'."
     assert official_semver_re.match(
-        __version__
-    ), f"'{__version__}' is not in the official semver.org format."
+        version
+    ), f"'{version}' is not in the official semver.org format."

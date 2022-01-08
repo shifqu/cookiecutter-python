@@ -4,4 +4,4 @@
 """
 from importlib.metadata import version as metadata_version
 
-__version__ = str(metadata_version(__name__))
+version = str(metadata_version(__name__))
