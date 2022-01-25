@@ -12,7 +12,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: "${{ runner.os }}-${{ hashFiles('**/pyproject.toml', '**/poetry.lock') }}"
+          key: {{ "${{ runner.os }}-${{ hashFiles('**/pyproject.toml', '**/poetry.lock') }}" }}
           restore-keys: |
             {{ "${{ runner.os }}-" }}
 
