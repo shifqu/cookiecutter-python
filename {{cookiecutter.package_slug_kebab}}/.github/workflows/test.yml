@@ -12,14 +12,13 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key:
-            {{ "${{ runner.os }}-${{ hashFiles('**/pyproject.toml', '**/setup.cfg') }}" }}
+          key: "${{ runner.os }}-${{ hashFiles('**/pyproject.toml', '**/poetry.lock') }}"
           restore-keys: |
             {{ "${{ runner.os }}-" }}
 
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.8.10'
+          python-version: '3.9.10'
 
       - name: Install dependencies
         run: |
