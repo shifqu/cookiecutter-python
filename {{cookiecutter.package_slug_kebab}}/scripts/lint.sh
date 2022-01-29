@@ -8,6 +8,6 @@ poetry run isort --check --diff {{cookiecutter.package_slug}}/ tests/
 poetry run black --check {{cookiecutter.package_slug}}/ tests/
 poetry run pydocstyle {{cookiecutter.package_slug}}/ tests/
 poetry run flake8 {{cookiecutter.package_slug}}/ tests/
-poetry run mypy --ignore-missing-imports {{cookiecutter.package_slug}}/
+poetry run mypy {{cookiecutter.package_slug}}/
 poetry run bandit -r {{cookiecutter.package_slug}}/
 poetry run safety check
