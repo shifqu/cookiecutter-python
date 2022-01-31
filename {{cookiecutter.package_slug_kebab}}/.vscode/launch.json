@@ -16,6 +16,15 @@
       "args": [
         "--version"
       ]
+    },
+    {
+      "name": "Python: Debug Test",
+      "type": "python",
+      "request": "launch",
+      "purpose": [
+        "debug-test"
+      ],
+      "justMyCode": false,
     }
   ]
 }
