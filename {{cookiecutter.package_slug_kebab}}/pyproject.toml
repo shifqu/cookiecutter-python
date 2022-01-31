@@ -63,5 +63,5 @@ convention = "numpy"
 branch = true
 
 [tool.coverage.report]
-exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]
+exclude_lines = ["pragma: no cover"]
 omit = ["*tests*"]
