@@ -4,8 +4,9 @@ NOTE: This upgrades the dependencies outside their specified boundaries.
 """
 import subprocess
 from collections.abc import MutableMapping
+from functools import reduce
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 import toml
 
@@ -20,14 +21,28 @@ def _toml_file(path: Optional[Path] = None) -> MutableMapping[str, Any]:
     return toml.load(current_toml)
 
 
+def _reduce_packages(state: list[str], item: tuple[str, Union[str, dict[str, Any]]]) -> list[str]:
+    name, details = item
+    if isinstance(details, str):
+        return state + [f"{name}@latest"]
+
+    if isinstance(details, dict):
+        if extras := details.get("extras"):
+            extras_str = ",".join(extras)
+            return state + [f"{name}[{extras_str}]@latest"]
+
+    print(f"warn: skipping {name} as it has unsupported details {details}.")
+    return state
+
+
 def _poetry_add_latest(packages: MutableMapping[str, Any], dev: bool = False) -> None:
     if dev:
         initial_command = ["poetry", "add", "--dev"]
     else:
         initial_command = ["poetry", "add"]
 
-    package_names_latest = [f"{package_name}@latest" for package_name in packages]
-    final_command = initial_command + package_names_latest
+    package_item_iter = packages.items()
+    final_command = reduce(_reduce_packages, package_item_iter, initial_command)
     subprocess.run(final_command)
 
 
