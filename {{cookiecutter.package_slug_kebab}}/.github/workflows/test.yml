@@ -26,6 +26,9 @@ jobs:
           python -m pip install --upgrade poetry
           poetry install
 
+      - name: Lint
+        run: ./scripts/lint.sh
+
       - name: Test
 {%- if cookiecutter.is_open_source != "y" %}
         run: ./scripts/test.sh
