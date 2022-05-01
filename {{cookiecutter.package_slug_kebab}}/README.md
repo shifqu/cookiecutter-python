@@ -8,7 +8,7 @@
 [![Join the chat at https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}](https://badges.gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}.svg)](https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Downloads](https://pepy.tech/badge/{{cookiecutter.package_slug_kebab}})](https://pepy.tech/project/{{cookiecutter.package_slug_kebab}})
 {%- endif %}
-[![Test Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/workflows/Test/badge.svg?branch=develop)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/actions?query=workflow%3ATest)
+[![Test Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/{{cookiecutter.package_slug_kebab}}/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat)](https://pycqa.github.io/isort/)
