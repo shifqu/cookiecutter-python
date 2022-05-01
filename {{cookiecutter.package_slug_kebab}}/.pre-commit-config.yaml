@@ -29,6 +29,14 @@ repos:
         args: [--markdown-linebreak-ext=md]
 -   repo: local
     hooks:
+      - id: run-lint-script
+        name: Run ./scripts/lint
+        entry: ./scripts/lint.sh
+        language: system
+        always_run: true
+        pass_filenames: false
+        require_serial: true
+        stages: [push]
       - id: run-test-script
         name: Run ./scripts/test
         entry: ./scripts/test.sh
