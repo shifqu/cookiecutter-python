@@ -64,3 +64,6 @@ branch = true
 [tool.coverage.report]
 exclude_lines = ["pragma: no cover"]
 omit = ["*tests*"]
+
+[tool.bandit]
+skips = ["B101"]

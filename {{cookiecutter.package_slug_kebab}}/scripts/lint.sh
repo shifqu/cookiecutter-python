@@ -8,5 +8,5 @@ poetry run black --check {{cookiecutter.package_slug}}/ tests/
 poetry run pydocstyle {{cookiecutter.package_slug}}/ tests/
 poetry run flake8 {{cookiecutter.package_slug}}/ tests/
 poetry run mypy {{cookiecutter.package_slug}}/
-poetry run bandit -r {{cookiecutter.package_slug}}/
+poetry run bandit -c pyproject.toml -r {{cookiecutter.package_slug}}/
 poetry run safety check
