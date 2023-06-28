@@ -37,7 +37,7 @@ def _reduce_packages(state: list[str], item: tuple[str, Union[str, dict[str, Any
 
 def _poetry_add_latest(packages: MutableMapping[str, Any], dev: bool = False) -> None:
     if dev:
-        initial_command = ["poetry", "add", "--dev"]
+        initial_command = ["poetry", "add", "--group", "dev"]
     else:
         initial_command = ["poetry", "add"]
 
@@ -59,7 +59,7 @@ def main() -> None:
     dependencies: MutableMapping[str, Any] = tool_poetry["dependencies"]
     dependencies.pop("python", None)
     _poetry_add_latest(dependencies)
-    dev_dependencies = tool_poetry["dev-dependencies"]
+    dev_dependencies = tool_poetry["group"]["dev"]["dependencies"]
     _poetry_add_latest(dev_dependencies, dev=True)
 
 
