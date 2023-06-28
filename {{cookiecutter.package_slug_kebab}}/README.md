@@ -15,7 +15,7 @@
 
 ---
 ## System requirements
-{{cookiecutter.project_name}} requires [Python 3.10+](https://www.python.org/downloads/) and [Poetry 1.0+](https://python-poetry.org/docs/).
+{{cookiecutter.project_name}} requires [Python 3.11+](https://www.python.org/downloads/) and [Poetry 1.5+](https://python-poetry.org/docs/).
 
 ##### Tip: The recommended IDE is [VSCode](https://code.visualstudio.com/). A `.vscode` directory is provided with a file containing recommended extensions alongside default launch configurations and workspace specific settings.
 
