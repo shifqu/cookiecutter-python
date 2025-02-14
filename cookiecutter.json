@@ -4,11 +4,8 @@
   "package_slug_kebab": "{{cookiecutter.package_slug.replace('_', '-')}}",
   "project_description": "Project short description.",
   "project_version": "0.0.1",
-  "is_open_source": "y",
-  "include_contributing_docs": "y",
-  "ignore_poetry_lock_file": "n",
-  "full_name": "Sonny Valkeneers",
-  "email": "sonny@softllama.net",
-  "organization": "Softllama",
+  "python_version": "3.12",
+  "author_name": "Sonny Valkeneers",
+  "author_email": "sonny@softllama.net",
   "github_username": "shifqu"
 }
