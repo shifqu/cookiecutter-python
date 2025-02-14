@@ -3,4 +3,4 @@ services:
     build: .
     restart: unless-stopped
     environment:
-      - DEBUG=${{{ cookiecutter.package_slug|upper }}_DEBUG:?Please export {{ cookiecutter.package_slug|upper }}_DEBUG as an environment variable}
+      - DEBUG=${{ "{" }}{{ cookiecutter.package_slug|upper }}_DEBUG:?Please export {{ cookiecutter.package_slug|upper }}_DEBUG as an environment variable{{ "}" }}
