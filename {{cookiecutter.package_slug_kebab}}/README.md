@@ -2,37 +2,109 @@
 {{cookiecutter.project_description}}
 
 ---
-{% if cookiecutter.is_open_source == "y" %}
-[![PyPI version](https://badge.fury.io/py/{{cookiecutter.package_slug_kebab}}.svg)](http://badge.fury.io/py/{{cookiecutter.package_slug_kebab}})
-[![codecov](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}})
-[![Join the chat at https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}](https://badges.gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}.svg)](https://gitter.im/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Downloads](https://pepy.tech/badge/{{cookiecutter.package_slug_kebab}})](https://pepy.tech/project/{{cookiecutter.package_slug_kebab}})
-{%- endif %}
-[![Test Status](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/actions?query=workflow%3ATest)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.python.org/pypi/{{cookiecutter.package_slug_kebab}}/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat)](https://pycqa.github.io/isort/)
+[![Code style: Ruff](https://img.shields.io/badge/style-ruff-41B5BE)](https://github.com/astral-sh/ruff)
+[![Typing: Pyright](https://img.shields.io/badge/typing-pyright-%236a5acd
+)](https://github.com/RobertCraigie/pyright-python)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/license/mit)
 
 ---
 ## System requirements
-{{cookiecutter.project_name}} requires [Python 3.11+](https://www.python.org/downloads/) and [Poetry 1.5+](https://python-poetry.org/docs/).
+{{cookiecutter.project_name}} uses [Python {{ cookiecutter.python_version }}](https://www.python.org/downloads/).
+
+Optionally Docker can be used for deployments or consistent local development.
 
 ##### Tip: The recommended IDE is [VSCode](https://code.visualstudio.com/). A `.vscode` directory is provided with a file containing recommended extensions alongside default launch configurations and workspace specific settings.
 
+## Prerequisites
+The builtin module [venv](https://docs.python.org/3/library/venv.html) is used to manage virtual environments, [pip-tools](https://github.com/jazzband/pip-tools?tab=readme-ov-file#pip-tools--pip-compile--pip-sync) to manage dependencies and [setuptools](https://setuptools.pypa.io/en/latest/) to build the actual project. A [compose file](https://docs.docker.com/reference/compose-file/) alongside a [Dockerfile](https://docs.docker.com/reference/dockerfile/) are also included.
+### Create a virtual environment
+`python -m venv .venv/`
+### Activate the virtual environment
+`source .venv/bin/activate`
+### Ensure pip is updated and pip-tools is installed
+`pip install --upgrade pip pip-tools`
+
 ## Installation
-{{cookiecutter.project_name}} uses Poetry to manage the virtual environments. This makes installing the application locally a breeze.  
+`pip-sync` is used to ensure only the required dependencies are installed. Without it, if any packages were installed before, they would remain in the environment.
 
-`poetry install`
+`pip install` is used to ensure scripts are installed and available.
+For development, the `--editable` flag is used in order to reflect changes made to the source code immediately. 
 
-`poetry run pip install --upgrade pip`
+### Development
+```
+pip-sync requirements/dev.txt && \
+pip install --editable .[dev]
+```
+### Production
+```
+pip-sync requirements/main.txt && \
+pip install .
+```
 
-`poetry update`
+## Useful commands
+### Formatting/Linting/Type checking
+#### Format the code
+```
+ruff format src/
+```
 
-`poetry run pre-commit install -t pre-commit -t pre-push`
+#### Lint the code (and auto-fix what can be fixed)
+```
+ruff check --fix src/
+pylint src/    
+```
 
-##### Tip: This repository ships with an install script (./scripts/install.sh) which will run above commands for you
+###### Note: `&& \` to combine the command is not used because pylint should be ran regardless of the exit_code of ruff
 
----
-[Read Latest Documentation](https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.package_slug_kebab}}/) - [Browse GitHub Code Repository](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_slug_kebab}}/)
+#### Type-check the codebase
+```
+pyright src/
+```
+
+### Docker
+#### Rebuild, recreate the application and run it in the background
+```
+docker compose up -d --build --force-recreate
+```
+
+#### Check the container's logs (-f follows).
+```
+docker compose logs -f
+```
+
+#### Get a shell in the docker container
+```
+docker compose exec {{cookiecutter.package_slug_kebab}} bash
+```
+
+## Contributing / Developing
+### Update/Add/Compile requirements
+Core dependencies should be added to `requirements/main.in` and development dependencies to `requirements/dev.in`.
+
+Once this is done, `pip-compile` is used to generate the effective `requirements` files.
+
+#### Development dependencies
+```
+pip-compile --extra dev -o requirements/dev.txt pyproject.toml
+```
+
+#### Main dependencies
+```
+pip-compile -o requirements/main.txt pyproject.toml
+```
+
+## Deploying
+### Docker
+#### Development
+```
+docker compose -f compose.yml -f compose.dev.yml up -d --build
+```
+
+#### Production
+```
+docker compose up -d --build
+```
+
+A compose file and Dockerfile are provided to deploy consistently. The files can be included in central compose files using the `include` directive in the central file. This is useful when deploying multiple services on a single server behind an nginx proxy. The central file would define the nginx config and just include this service.
 
 ---
