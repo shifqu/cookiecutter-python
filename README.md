@@ -1,6 +1,6 @@
 # cookiecutter-python
 
-A simple template for my own personal Python projects utilizing pip-tools + pylint + ruff. Best used with [cruft](https://cruft.github.io/cruft/)
+A simple template for my own personal Python projects utilizing pip-tools + pylint + ruff + pyright. Best used with [cruft](https://cruft.github.io/cruft/)
 
 To use:
 
