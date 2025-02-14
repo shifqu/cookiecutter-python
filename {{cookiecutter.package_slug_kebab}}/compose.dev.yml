@@ -1,0 +1,6 @@
+services:
+  {{ cookiecutter.package_slug_kebab }}:
+    build:
+      target: development
+    volumes:
+      - ./:/app
