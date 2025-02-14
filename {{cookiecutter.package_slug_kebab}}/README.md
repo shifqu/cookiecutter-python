@@ -42,23 +42,28 @@ pip install .
 ```
 
 ## Useful commands
-### Formatting/Linting/Type checking
-#### Format the code
+### Format the source code and the tests
+Formatting should likely be done as a last step as some auto-fixed linting issues can result in wrongly formatted code.
 ```
-ruff format src/
+ruff format src/ tests/
 ```
 
-#### Lint the code (and auto-fix what can be fixed)
+### Lint the source code (and auto-fix what can be fixed)
 ```
 ruff check --fix src/
-pylint src/    
+pylint src/
 ```
 
 ###### Note: `&& \` to combine the command is not used because pylint should be ran regardless of the exit_code of ruff
 
-#### Type-check the codebase
+### Type-check the source code
 ```
 pyright src/
+```
+
+### Test the source code and generating an html report
+```
+pytest -s --cov=src/ --cov-report=term-missing --cov-report html tests/
 ```
 
 ### Docker
@@ -67,7 +72,7 @@ pyright src/
 docker compose up -d --build --force-recreate
 ```
 
-#### Check the container's logs (-f follows).
+#### Check the container's logs (-f follows)
 ```
 docker compose logs -f
 ```
