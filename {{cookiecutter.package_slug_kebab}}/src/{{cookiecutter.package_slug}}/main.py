@@ -17,7 +17,5 @@ def main() -> None:
         """When in debug-mode, keep the program running until the user exits."""
 
 
-
-
 if __name__ == "__main__":
     main()
