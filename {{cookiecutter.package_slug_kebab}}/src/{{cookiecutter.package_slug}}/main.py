@@ -5,9 +5,18 @@ import os
 
 def main() -> None:
     """Execute the main function for when the project is run."""
-    print("Hello, world!")
-    default_value = "{{ cookiecutter.package_slug|upper }}_DEBUG environment variable not found."
-    print(os.environ.get("{{ cookiecutter.package_slug|upper }}_DEBUG", default_value))
+    {{ cookiecutter.package_slug }}_debug = os.environ.get("{{ cookiecutter.package_slug|upper }}_DEBUG", "1")
+
+    try:
+        debug = int({{ cookiecutter.package_slug }}_debug)
+    except ValueError:
+        """Could not convert to an int, assume True."""
+        debug = True
+
+    while debug:
+        """When in debug-mode, keep the program running until the user exits."""
+
+
 
 
 if __name__ == "__main__":
