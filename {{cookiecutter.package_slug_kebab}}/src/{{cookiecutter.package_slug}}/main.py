@@ -6,7 +6,7 @@ import os
 def main() -> None:
     """Execute the main function for when the project is run."""
     {{ cookiecutter.package_slug }}_debug = os.environ.get("{{ cookiecutter.package_slug|upper }}_DEBUG", "1")
-
+    print("{{ cookiecutter.package_slug|upper }}_DEBUG: ", "{{ cookiecutter.package_slug }}_debug")
     try:
         debug = int({{ cookiecutter.package_slug }}_debug)
     except ValueError:
