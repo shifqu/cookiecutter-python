@@ -3,7 +3,7 @@ name: "Python application: {{ cookiecutter.project_name }}"
 on: [push, pull_request]
 
 jobs:
-  build:
+  validate-code:
     runs-on: ubuntu-latest
 
     steps:
