@@ -1,4 +1,4 @@
-name: "Python application: {{ cookiecutter.project_name }}"
+name: "CI Validation: {{ cookiecutter.project_name }}"
 
 on: [push, pull_request]
 
